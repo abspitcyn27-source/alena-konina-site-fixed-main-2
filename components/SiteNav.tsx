@@ -12,8 +12,7 @@ export default function SiteNav({ lang }: { lang: Lang }) {
       <div className="brand">
         <strong>{CONTACTS.brand}</strong>
         <span>
-          {lang === "ru" ? CONTACTS.locationRu : CONTACTS.locationEn} ·{" "}
-          <span className="kbd">{lang === "ru" ? CONTACTS.bookingNoteRu : CONTACTS.bookingNoteEn}</span>
+          {lang === "ru" ? CONTACTS.locationRu : CONTACTS.locationEn}
         </span>
       </div>
 

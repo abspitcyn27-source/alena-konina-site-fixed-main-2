@@ -15,14 +15,14 @@ export const NAV = {
   ru: [
     { href: "/ru", label: "Главная" },
     { href: "/ru/portfolio", label: "Услуги" },
-    { href: "/ru/portfolio#booking", label: "Запись" },
+    { href: "/ru/about", label: "О мастере" },
     { href: "/ru/contacts", label: "Контакты" },
     { href: "/ru/academy", label: "Обучение" },
   ],
   en: [
     { href: "/en", label: "Home" },
     { href: "/en/portfolio", label: "Services" },
-    { href: "/en/portfolio#booking", label: "Booking" },
+    { href: "/en/about", label: "About" },
     { href: "/en/contacts", label: "Contacts" },
     { href: "/en/academy", label: "Academy" },
   ],

@@ -170,7 +170,7 @@ export const PRICE_ITEMS: PriceItem[] = [
       ru: "Снятие, обработка пальчиков, покрытие гель-лак, обработка стоп, зачистка онихолизиса (если имеется), рекомендации по уходу, крем+масло.",
       en: "Removal, toe treatment, gel polish, feet treatment, onycholysis cleaning (if present), aftercare advice, cream+oil.",
     },
-    coverSrc: "/prices/board-2.jpg",
+    coverSrc: "/gallery/pedicure/cover.jpg",
   },
   {
     id: "hyperkeratosis",
@@ -180,7 +180,7 @@ export const PRICE_ITEMS: PriceItem[] = [
       ru: "Избыточное утолщение и ороговение верхнего слоя кожи. При котором кожа грубая, сухая, с наличием мозолей и трещинами.",
       en: "Excess thickening and keratinization of the upper skin layer; rough, dry skin with calluses and cracks.",
     },
-    coverSrc: "/prices/board-1.jpg",
+    coverSrc: "/gallery/hyperkeratosis/cover.jpg",
   },
 ];
 
