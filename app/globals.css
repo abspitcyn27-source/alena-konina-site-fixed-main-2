@@ -45,7 +45,7 @@ a:hover{ text-decoration: none; }
   width: 100%;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 22px 16px 88px; /* bottom padding for mobile sticky bar */
+  padding: 22px 16px 88px;
 }
 
 /* NAV */
@@ -140,7 +140,7 @@ a:hover{ text-decoration: none; }
   font-size: 12px;
 
   transition: background .22s ease, color .22s ease, transform .18s ease, filter .22s ease;
-  min-height: 44px; /* tap target */
+  min-height: 44px;
 }
 .btn:hover{
   background: rgba(201,166,107,0.95);
@@ -219,7 +219,7 @@ a:hover{ text-decoration: none; }
   font-size: 15px;
 }
 
-/* PRICES */
+/* PRICES (старый блок — оставляем для обратной совместимости) */
 .priceGrid{
   margin-top: 18px;
   display: grid;
@@ -280,7 +280,8 @@ a:hover{ text-decoration: none; }
   position: absolute;
   left: 18px;
   right: 18px;
-  bottom: 14px;
+  top: 14px;
+  z-index: 2;
   padding: 12px 12px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.10);
@@ -289,7 +290,7 @@ a:hover{ text-decoration: none; }
   line-height: 1.55;
   font-size: 13px;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(-4px);
   transition: opacity .16s ease, transform .16s ease;
   pointer-events: none;
 }
@@ -418,7 +419,7 @@ a:hover{ text-decoration: none; }
   justify-content: space-between;
 }
 
-/* Keyboard-style tag (used in nav) */
+/* Keyboard-style tag */
 .kbd{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 12px;
@@ -458,7 +459,7 @@ a:hover{ text-decoration: none; }
   .hero h1{ font-size: 52px; }
   .grid{ gap: 18px; margin-top: 18px; }
   .twoCol .card{ grid-column: span 6; }
-  .mobileBar{ display: none; } /* desktop: hide bar */
+  .mobileBar{ display: none; }
 }
 
 @media (max-width: 520px){
@@ -501,30 +502,6 @@ a:hover{ text-decoration: none; }
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
 }
 
-.priceTooltip {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 14px;
-  z-index: 2;
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(8, 8, 10, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 14px;
-  line-height: 1.35;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.priceTile:hover .priceTooltip,
-.priceTile:focus-within .priceTooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .priceModalTitle {
   margin: 0;
   font-size: 18px;
@@ -538,10 +515,11 @@ a:hover{ text-decoration: none; }
 }
 
 .priceModalDesc {
-  margin: 10px 0 0;
-  font-size: 14px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .priceGallery {
@@ -621,7 +599,6 @@ a:hover{ text-decoration: none; }
   border-color: rgba(211, 180, 106, 0.75);
   box-shadow: 0 0 0 2px rgba(211, 180, 106, 0.12);
 }
-
 
 /* ---------- Home: stretch-style layout ---------- */
 .heroFull{
@@ -789,9 +766,14 @@ a:hover{ text-decoration: none; }
   .tile{ grid-column: span 4; }
 }
 
+/* Works strip */
 .worksStrip{
   overflow-x: auto;
   padding-bottom: 4px;
+  scrollbar-width: none; /* Firefox */
+}
+.worksStrip::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 .worksTrack{
   display:flex;
@@ -957,8 +939,7 @@ a:hover{ text-decoration: none; }
   video{ animation:none; }
 }
 
-
-/* ---------- Utilities used across pages ---------- */
+/* ---------- Utilities ---------- */
 .page{
   margin-top: 18px;
 }
@@ -1000,7 +981,6 @@ a:hover{ text-decoration: none; }
   .twoCol{ grid-template-columns: 1fr 1fr; }
 }
 
-
 /* Mobile adjustments */
 @media (max-width: 640px){
   .nav{
@@ -1036,4 +1016,254 @@ a:hover{ text-decoration: none; }
     font-size: 11px;
     letter-spacing: 1.1px;
   }
+}
+
+/* =============================================================
+   PRICE GRID — новые классы для PriceGrid.tsx
+   ============================================================= */
+
+.priceTile {
+  position: relative;
+  grid-column: span 12;
+  min-height: 200px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(20, 20, 20, 0.70);
+  box-shadow: 0 14px 36px var(--shadow);
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.priceTile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 166, 107, 0.38);
+}
+
+@media (min-width: 860px) {
+  .priceTile { grid-column: span 6; min-height: 220px; }
+}
+@media (min-width: 1100px) {
+  .priceTile { grid-column: span 4; }
+}
+
+.priceTileBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.priceTileBg img {
+  object-fit: cover;
+}
+
+.priceTileOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0.10) 100%
+  );
+}
+
+.priceTileContent {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+}
+
+.priceTopRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pricePrice {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+.priceTooltipTitle {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 5px;
+  letter-spacing: 0.2px;
+}
+.priceTooltipText {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.priceTooltipNote {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+/* Modal */
+.priceModal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.priceModalBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.priceModalCard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 600px);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(14, 14, 14, 0.95);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.6);
+}
+
+.priceModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.priceModalSub {
+  margin-top: 5px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priceModalNote {
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+.priceModalClose {
+  appearance: none;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: background .15s ease;
+}
+.priceModalClose:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.priceModalBody {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+}
+
+.priceNav {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: background .15s ease;
+}
+.priceNav:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+.priceNav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.priceModalImageWrap {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.priceModalImage {
+  width: 100%;
+  height: auto;
+  max-height: 58vh;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.20);
+  display: block;
+}
+
+.priceThumbs {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.priceThumb {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.20);
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.priceThumb:hover {
+  transform: translateY(-1px);
+  border-color: rgba(201, 166, 107, 0.45);
+}
+
+.priceThumbActive {
+  border-color: rgba(201, 166, 107, 0.80) !important;
+  box-shadow: 0 0 0 2px rgba(201, 166, 107, 0.15);
+}
+
+.priceThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
