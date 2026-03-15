@@ -108,6 +108,15 @@ a:hover{ text-decoration: none; }
   transition: transform .18s ease, background .18s ease, border-color .18s ease;
 }
 .pill:hover{
+.pillActive {
+  border-color: rgba(201, 166, 107, 0.70);
+  background: rgba(201, 166, 107, 0.10);
+  color: var(--accent);
+}
+.pillActive:hover {
+  border-color: rgba(201, 166, 107, 0.90);
+  background: rgba(201, 166, 107, 0.15);
+}
   transform: translateY(-1px);
   background: rgba(255,255,255,0.06);
   border-color: rgba(201,166,107,0.38);
