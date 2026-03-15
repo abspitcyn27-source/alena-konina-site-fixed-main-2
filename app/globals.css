@@ -1272,16 +1272,13 @@ a:hover{ text-decoration: none; }
    Добавь в конец app/globals.css
    ============================================================= */
 
-/* Обёртка страницы */
-.newPage {
-  margin-top: 0;
-}
+.newPage { margin-top: 0; }
 
 /* ---- MARQUEE ---- */
 .marqueeWrap {
   overflow: hidden;
-  border-top: 1px solid rgba(201, 166, 107, 0.15);
-  border-bottom: 1px solid rgba(201, 166, 107, 0.15);
+  border-top: 1px solid rgba(201,166,107,0.15);
+  border-bottom: 1px solid rgba(201,166,107,0.15);
   padding: 8px 0;
 }
 .marqueeTrack {
@@ -1301,13 +1298,13 @@ a:hover{ text-decoration: none; }
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(201, 166, 107, 0.6);
+  color: rgba(201,166,107,0.6);
 }
 .marqueeDot {
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: rgba(201, 166, 107, 0.4);
+  background: rgba(201,166,107,0.4);
   display: inline-block;
 }
 
@@ -1318,15 +1315,13 @@ a:hover{ text-decoration: none; }
   grid-template-columns: 1fr 1fr;
   padding: 0 28px;
 }
-
 .newHeroLeft {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px 44px 50px 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
 }
-
 .newHeroTag {
   display: inline-flex;
   align-items: center;
@@ -1344,7 +1339,6 @@ a:hover{ text-decoration: none; }
   text-transform: uppercase;
   color: var(--accent);
 }
-
 .newH1 {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: clamp(44px, 4.8vw, 72px);
@@ -1353,30 +1347,26 @@ a:hover{ text-decoration: none; }
   letter-spacing: -0.02em;
   margin: 0;
 }
-.newH1 span {
-  display: block;
-}
+.newH1 span { display: block; }
 .newH1 em {
   font-style: italic;
   color: var(--accent);
   display: block;
 }
-
 .newHeroSub {
   font-size: 13px;
-  color: rgba(240, 236, 228, 0.44);
+  color: rgba(240,236,228,0.44);
   line-height: 1.7;
   max-width: 36ch;
   margin-top: 20px;
   margin-bottom: 30px;
 }
-
 .newHeroNote {
   margin-top: 18px;
   font-size: 9px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: rgba(240, 236, 228, 0.22);
+  color: rgba(240,236,228,0.22);
 }
 
 /* Hero right */
@@ -1385,36 +1375,48 @@ a:hover{ text-decoration: none; }
   flex-direction: column;
   justify-content: space-between;
   padding: 50px 0 50px 48px;
+  gap: 28px;
 }
-
+.newHeroBigWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .newHeroBigText {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: clamp(90px, 11vw, 168px);
+  font-size: clamp(80px, 10vw, 150px);
   font-weight: 900;
   line-height: 1;
-  color: rgba(201, 166, 107, 0.07);
+  color: rgba(201,166,107,0.08);
   letter-spacing: -0.04em;
   user-select: none;
+  margin-bottom: 0;
 }
-
+.newHeroBio {
+  font-size: 13px;
+  color: rgba(240,236,228,0.5);
+  line-height: 1.7;
+  max-width: 40ch;
+  border-left: 2px solid rgba(201,166,107,0.35);
+  padding-left: 14px;
+  margin: 0;
+}
 .newHeroStats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: rgba(201, 166, 107, 0.12);
-  border: 1px solid rgba(201, 166, 107, 0.12);
+  background: rgba(201,166,107,0.12);
+  border: 1px solid rgba(201,166,107,0.12);
 }
 .newStat {
   padding: 18px 20px;
-  background: rgba(9, 8, 6, 0.95);
+  background: rgba(9,8,6,0.95);
   transition: background 0.2s;
 }
-.newStat:hover {
-  background: rgba(201, 166, 107, 0.06);
-}
+.newStat:hover { background: rgba(201,166,107,0.06); }
 .newStatNum {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 900;
   color: var(--accent);
   line-height: 1;
@@ -1424,76 +1426,52 @@ a:hover{ text-decoration: none; }
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 236, 228, 0.28);
+  color: rgba(240,236,228,0.28);
 }
 
 /* ---- SECTION HEADER ---- */
-.newGallerySection,
+.newVideoSection,
 .newSvcSection {
   padding: 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 .newSecHead {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   padding: 28px 0 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .newSecTitle {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 12px;
   font-style: italic;
-  color: rgba(240, 236, 228, 0.28);
+  color: rgba(240,236,228,0.28);
 }
 .newSecLink {
   font-size: 9px;
   letter-spacing: 0.13em;
-  color: rgba(201, 166, 107, 0.55);
+  color: rgba(201,166,107,0.55);
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.2s;
 }
-.newSecLink:hover {
-  color: var(--accent);
-}
+.newSecLink:hover { color: var(--accent); }
 
-/* ---- GALLERY GRID ---- */
-.newGalleryGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  padding: 18px 0 26px;
-}
-.newGalleryItem {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  border-radius: 4px;
+/* ---- VIDEO ---- */
+.newVideoWrap {
+  margin: 20px 0 28px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  cursor: pointer;
-  border: 1px solid rgba(201, 166, 107, 0.08);
-  transition: border-color 0.2s, transform 0.2s;
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+.newVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-}
-.newGalleryItem:hover {
-  border-color: rgba(201, 166, 107, 0.5);
-  transform: translateY(-3px);
-}
-.newGalleryItemWide {
-  grid-column: span 2;
-  aspect-ratio: auto;
-  min-height: 260px;
-}
-.newGalleryOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(9, 8, 6, 0.65) 0%, transparent 55%);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.newGalleryItem:hover .newGalleryOverlay {
-  opacity: 1;
 }
 
 /* ---- SERVICES SCROLL ---- */
@@ -1502,100 +1480,117 @@ a:hover{ text-decoration: none; }
   scrollbar-width: none;
   padding: 18px 0 24px;
 }
-.newSvcScroll::-webkit-scrollbar {
-  display: none;
-}
+.newSvcScroll::-webkit-scrollbar { display: none; }
 .newSvcTrack {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   width: max-content;
 }
+
+/* Карточка услуги — с фото */
 .newSvcCard {
-  width: 210px;
+  width: 220px;
+  height: 300px;
   flex: 0 0 auto;
-  border-radius: 3px;
-  border: 1px solid rgba(201, 166, 107, 0.12);
-  background: rgba(201, 166, 107, 0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(201,166,107,0.12);
+  overflow: hidden;
   cursor: pointer;
   transition: border-color 0.2s, transform 0.2s;
   position: relative;
-  overflow: hidden;
-  min-height: 200px;
   text-decoration: none;
   color: var(--text);
+  display: block;
 }
 .newSvcCard:hover {
-  border-color: rgba(201, 166, 107, 0.45);
-  transform: translateY(-3px);
+  border-color: rgba(201,166,107,0.5);
+  transform: translateY(-4px);
 }
 .newSvcCardFeat {
-  width: 260px;
-  border-color: rgba(201, 166, 107, 0.28);
-  background: rgba(201, 166, 107, 0.06);
+  width: 280px;
+  height: 300px;
+  border-color: rgba(201,166,107,0.30);
+}
+
+/* Фоновое фото */
+.newSvcCover {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.newSvcCoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(9,8,6,0.92) 0%,
+    rgba(9,8,6,0.4) 55%,
+    rgba(9,8,6,0.1) 100%
+  );
+}
+
+/* Контент поверх фото */
+.newSvcContent {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
 }
 .newSvcBgNum {
   position: absolute;
-  right: -8px;
-  bottom: -12px;
+  top: 12px;
+  right: 14px;
+  z-index: 3;
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 96px;
+  font-size: 13px;
   font-weight: 900;
-  color: rgba(201, 166, 107, 0.05);
-  line-height: 1;
-  user-select: none;
-  letter-spacing: -0.04em;
+  color: rgba(201,166,107,0.45);
+  letter-spacing: 0.05em;
 }
 .newSvcTag {
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(201, 166, 107, 0.65);
-  margin-bottom: 8px;
+  color: rgba(201,166,107,0.8);
+  margin-bottom: 6px;
 }
 .newSvcName {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.2;
-  margin-bottom: 8px;
-}
-.newSvcDesc {
-  font-size: 11px;
-  color: rgba(240, 236, 228, 0.32);
-  line-height: 1.5;
+  margin-bottom: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
 .newSvcBottom {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 14px;
-  position: relative;
+  margin-top: 10px;
 }
 .newSvcPrice {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
   color: var(--accent);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 .newSvcArr {
-  font-size: 14px;
-  color: rgba(201, 166, 107, 0.4);
+  font-size: 16px;
+  color: rgba(201,166,107,0.5);
   transition: transform 0.2s;
 }
-.newSvcCard:hover .newSvcArr {
-  transform: translateX(3px);
-}
+.newSvcCard:hover .newSvcArr { transform: translateX(4px); }
 
 /* ---- QUOTE ---- */
 .newQuote {
   margin: 2px 28px;
   padding: 30px 40px;
-  background: rgba(201, 166, 107, 0.05);
-  border: 1px solid rgba(201, 166, 107, 0.13);
+  background: rgba(201,166,107,0.05);
+  border: 1px solid rgba(201,166,107,0.13);
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -1606,15 +1601,10 @@ a:hover{ text-decoration: none; }
   font-size: clamp(15px, 1.8vw, 21px);
   font-style: italic;
   line-height: 1.4;
-  color: rgba(240, 236, 228, 0.8);
+  color: rgba(240,236,228,0.8);
 }
-.newQuoteText span {
-  color: var(--accent);
-}
-.newQuoteSig {
-  text-align: right;
-  white-space: nowrap;
-}
+.newQuoteText span { color: var(--accent); }
+.newQuoteSig { text-align: right; white-space: nowrap; }
 .newQuoteName {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-style: italic;
@@ -1626,7 +1616,7 @@ a:hover{ text-decoration: none; }
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(240, 236, 228, 0.22);
+  color: rgba(240,236,228,0.22);
 }
 
 /* ---- АДАПТИВ ---- */
@@ -1639,43 +1629,28 @@ a:hover{ text-decoration: none; }
   .newHeroLeft {
     padding: 36px 0 28px;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .newHeroRight {
     padding: 28px 0 36px;
-    gap: 20px;
   }
-  .newHeroBigText {
-    display: none;
-  }
-  .newGallerySection,
-  .newSvcSection {
-    padding: 0 16px;
-  }
-  .newGalleryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .newGalleryItemWide {
-    grid-column: span 2;
-  }
+  .newHeroBigText { font-size: 80px; }
+  .newVideoSection,
+  .newSvcSection { padding: 0 16px; }
+  .newVideoWrap { aspect-ratio: 9 / 16; }
   .newQuote {
     margin: 2px 16px;
     padding: 24px 22px;
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .newQuoteSig {
-    text-align: left;
-  }
+  .newQuoteSig { text-align: left; }
 }
 
 @media (max-width: 560px) {
-  .newH1 {
-    font-size: 38px;
-  }
-  .newGalleryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .newH1 { font-size: 38px; }
+  .newSvcCard { width: 180px; height: 260px; }
+  .newSvcCardFeat { width: 220px; }
 }
 
 /* ---- АНИМАЦИИ ---- */
@@ -1691,7 +1666,6 @@ a:hover{ text-decoration: none; }
 .newHeroRight { animation: newFadeUp 0.6s ease both 0.22s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .newHeroTag, .newH1, .newHeroSub, .ctaRow, .newHeroNote, .newHeroRight {
-    animation: none;
-  }
+  .newHeroTag, .newH1, .newHeroSub, .ctaRow,
+  .newHeroNote, .newHeroRight { animation: none; }
 }
