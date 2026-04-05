@@ -1001,6 +1001,57 @@ a:hover{ text-decoration: none; }
 }
 
 
+/* ---------- Master section ---------- */
+.masterCard{
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(20,20,20,0.70);
+  box-shadow: 0 14px 36px var(--shadow);
+  overflow: hidden;
+}
+
+.masterPhoto{
+  position: relative;
+  height: 360px;
+  background: rgba(255,255,255,0.03);
+}
+
+.masterInfo{
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.masterLabel{
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.masterFacts{
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media (min-width: 860px){
+  .masterCard{
+    grid-template-columns: 400px 1fr;
+  }
+  .masterPhoto{
+    height: auto;
+    min-height: 420px;
+  }
+}
+
 /* Mobile adjustments */
 @media (max-width: 640px){
   .nav{

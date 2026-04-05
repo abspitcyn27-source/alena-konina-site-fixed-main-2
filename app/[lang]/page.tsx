@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HomeHero from "@/components/HomeHero";
 import ServiceTiles from "@/components/ServiceTiles";
 import WorksStrip from "@/components/WorksStrip";
@@ -11,6 +12,32 @@ export default function LangHome({ params }: { params: { lang: Lang } }) {
   return (
     <main>
       <HomeHero lang={lang} />
+
+      <section className="section">
+        <div className="masterCard">
+          <div className="masterPhoto">
+            <Image
+              src="/gallery/misc/alena.jpg"
+              alt={t.masterName}
+              fill
+              style={{ objectFit: "cover", objectPosition: "top" }}
+            />
+          </div>
+          <div className="masterInfo">
+            <p className="masterLabel">{t.masterLabel}</p>
+            <h2 className="h1">{t.masterName}</h2>
+            <p className="muted" style={{ marginTop: 10 }}>{t.masterBio}</p>
+            <ul className="masterFacts">
+              {t.masterFacts.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+            <div style={{ marginTop: 16 }}>
+              <CTAButtons lang={lang} />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section sectionTight">
         <div className="sectionHead">
