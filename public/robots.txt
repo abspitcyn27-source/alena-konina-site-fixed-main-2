@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alena-konina-site-fixed-main-2.vercel.app/sitemap.xml
