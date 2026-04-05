@@ -13,7 +13,7 @@ export default function SiteNav({ lang }: { lang: Lang }) {
       <div className="brand">
         <strong>{CONTACTS.brand}</strong>
         <span>
-          {lang === "ru" ? CONTACTS.locationRu : CONTACTS.locationEn}
+          {lang === "ru" ? CONTACTS.locationRu : lang === "es" ? CONTACTS.locationEs : CONTACTS.locationEn}
         </span>
       </div>
 
@@ -31,13 +31,15 @@ export default function SiteNav({ lang }: { lang: Lang }) {
             </Link>
           );
         })}
-        <Link
-          className="pill"
-          href={lang === "ru" ? "/en" : "/ru"}
-          aria-label={lang === "ru" ? "Switch to English" : "Switch to Russian"}
-        >
-          {lang === "ru" ? "EN" : "RU"}
-        </Link>
+        {lang !== "ru" && (
+          <Link className="pill" href="/ru" aria-label="Switch to Russian">RU</Link>
+        )}
+        {lang !== "en" && (
+          <Link className="pill" href="/en" aria-label="Switch to English">EN</Link>
+        )}
+        {lang !== "es" && (
+          <Link className="pill" href="/es" aria-label="Cambiar a español">ES</Link>
+        )}
       </nav>
     </header>
   );

@@ -9,11 +9,13 @@ export default function ServiceTiles({ lang }: { lang: Lang }) {
     .map((id) => PRICE_ITEMS.find((x) => x.id === id))
     .filter(Boolean) as PriceItem[];
 
+  const priceLang = lang === "es" ? "en" : lang;
+
   return (
     <div className="tileGrid">
       {items.map((item) => {
-        const title = item.title[lang];
-        const desc = item.description[lang];
+        const title = item.title[priceLang];
+        const desc = item.description[priceLang];
         return (
           <Link
             key={item.id}

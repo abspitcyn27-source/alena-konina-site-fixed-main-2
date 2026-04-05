@@ -2,16 +2,18 @@ import CTAButtons from "../../../components/CTAButtons";
 import { CONTACTS, type Lang } from "../../../lib/content";
 
 export default function ContactsPage({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang ?? "ru";
+  const lang: Lang = params.lang === "en" ? "en" : params.lang === "es" ? "es" : "ru";
 
   return (
     <main>
       <section className="hero">
-        <h1>{lang === "ru" ? "Контакты" : "Contacts"}</h1>
+        <h1>{lang === "ru" ? "Контакты" : lang === "es" ? "Contacto" : "Contacts"}</h1>
         <p className="muted">
           {lang === "ru"
             ? "Пишите в мессенджеры — это быстрее всего."
-            : "Message me — it’s the fastest way."}
+            : lang === "es"
+            ? "Escríbeme por mensajería — es la forma más rápida."
+            : "Message me — it's the fastest way."}
         </p>
 
         <div className="grid twoCol" style={{ marginTop: 18 }}>
@@ -40,15 +42,17 @@ export default function ContactsPage({ params }: { params: { lang: Lang } }) {
             </p>
           </div>
           <div className="card">
-            <h2>{lang === "ru" ? "Локация" : "Location"}</h2>
-            <p>{lang === "ru" ? CONTACTS.locationRu : CONTACTS.locationEn}</p>
+            <h2>{lang === "ru" ? "Локация" : lang === "es" ? "Ubicación" : "Location"}</h2>
+            <p>{lang === "ru" ? CONTACTS.locationRu : lang === "es" ? CONTACTS.locationEs : CONTACTS.locationEn}</p>
           </div>
           <div className="card">
-            <h2>{lang === "ru" ? "Запись" : "Booking"}</h2>
+            <h2>{lang === "ru" ? "Запись" : lang === "es" ? "Reservas" : "Booking"}</h2>
             <p className="muted">
               {lang === "ru"
                 ? "Напишите — предложу ближайшие свободные окна."
-                : "Message me and I’ll suggest the nearest available slots."}
+                : lang === "es"
+                ? "Escríbeme y te sugeriré los huecos más próximos."
+                : "Message me and I'll suggest the nearest available slots."}
             </p>
             <div style={{ marginTop: 12 }}>
               <CTAButtons lang={lang} />

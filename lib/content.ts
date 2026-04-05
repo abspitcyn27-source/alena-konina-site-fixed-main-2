@@ -4,12 +4,14 @@ export const CONTACTS = {
   instagramUrl: "https://instagram.com/alena.pro.nail",
   locationRu: "Москва, м. Улица 1905 года",
   locationEn: "Moscow, Ulitsa 1905 Goda metro",
+  locationEs: "Moscú, metro Ulitsa 1905 Goda",
   brand: "Alena Konina",
   bookingNoteRu: "по предварительной записи",
   bookingNoteEn: "by appointment only",
+  bookingNoteEs: "solo con cita previa",
 };
 
-export type Lang = "ru" | "en";
+export type Lang = "ru" | "en" | "es";
 
 export const NAV = {
   ru: [
@@ -25,6 +27,13 @@ export const NAV = {
     { href: "/en/about", label: "About" },
     { href: "/en/contacts", label: "Contacts" },
     { href: "/en/academy", label: "Academy" },
+  ],
+  es: [
+    { href: "/es", label: "Inicio" },
+    { href: "/es/portfolio", label: "Servicios" },
+    { href: "/es/about", label: "Sobre mí" },
+    { href: "/es/contacts", label: "Contacto" },
+    { href: "/es/academy", label: "Academia" },
   ],
 };
 
@@ -108,5 +117,48 @@ export const COPY = {
       "Online courses and in-person training in Moscow are in production. Leave a request to get early access.",
     footerLeft: "© 2024 Alena Konina",
     footerRight: "Moscow · Booking: Telegram / WhatsApp",
+  },
+  es: {
+    heroTitle: "Uñas en Moscú — metro Ulitsa 1905 Goda",
+    heroSubtitle: "Limpio · Seguro · Trato personalizado",
+    heroText:
+      "Manicura y pedicura profesional en un ambiente tranquilo. Reserva fácil por Telegram o WhatsApp.",
+    ctaBook: "Reservar",
+    ctaTelegram: "Reservar por Telegram",
+    ctaWhatsApp: "Reservar por WhatsApp",
+    masterLabel: "Sobre la artista",
+    masterName: "Alena Konina",
+    masterBio:
+      "Artista de uñas con más de 5 años de experiencia. Especializada en manicura con torno eléctrico, extensiones y fortalecimiento. Trabajo exclusivamente con materiales profesionales en un ambiente tranquilo, sin prisas.",
+    masterFacts: [
+      "5+ años de experiencia",
+      "Manicura y pedicura con torno",
+      "Extensiones y fortalecimiento",
+      "Solo materiales profesionales",
+    ],
+    whyTitle: "Por qué me eligen",
+    whyItems: [
+      "Experiencia con distintos tipos de uñas",
+      "Técnicas y materiales modernos",
+      "Proceso limpio y seguro",
+      "Ambiente tranquilo y privado",
+      "Ubicación central en Moscú",
+    ],
+    servicesTitle: "Servicios",
+    servicesItems: [
+      "Manicura + esmalte gel",
+      "Fortalecimiento con gel",
+      "Extensiones",
+      "Pedicura",
+      "Retirada / corrección / reparación",
+    ],
+    locationTitle: "Ubicación",
+    locationText:
+      "Moscú, metro Ulitsa 1905 Goda. La dirección exacta se comparte tras confirmar la cita.",
+    academyTitle: "Academia — próximamente",
+    academyText:
+      "Cursos online y presenciales en Moscú para profesionales que quieren mejorar su nivel. Deja tu solicitud para acceso anticipado.",
+    footerLeft: "© 2024 Alena Konina",
+    footerRight: "Moscú · Reservas: Telegram / WhatsApp",
   },
 } as const;
