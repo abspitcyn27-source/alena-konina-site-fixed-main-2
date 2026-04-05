@@ -18,9 +18,9 @@ const HOME_SERVICE_IDS = [
 ];
 
 const BIO = {
-  ru: "Занимаюсь ногтями с детства. В 14 уже делала наращивание. В 20 переехала в Москву и превратила хобби в профессию. Многократный призёр чемпионатов мира. Сертифицированный судья «Золотые руки мира».",
-  en: "I've been doing nails since childhood. At 14 I was doing gel extensions. At 20 I moved to Moscow and turned a hobby into a profession. Multiple world championship prizewinner. Certified judge of the Golden Hands of the World.",
-  es: "Llevo haciendo uñas desde la infancia. A los 14 ya hacía extensiones. A los 20 me mudé a Moscú y convertí el hobby en profesión. Múltiples premios en campeonatos mundiales. Jueza certificada de «Golden Hands of the World».",
+  ru: "Привет! Я Алёна Конина — эксперт по современным техникам маникюра. Мне 22 года, и моё увлечение ногтями началось в 14 лет. Специализируюсь на аккуратном гигиеническом маникюре без порезов, качественном покрытии без отслоек, ровной архитектуре и наращивании даже на сложные ногти.",
+  en: "Hi! I'm Alena Konina — a nail expert specializing in modern techniques. I'm 22 and have been passionate about nails since I was 14. I specialize in precise cut-free manicure, quality no-chip gel coverage, clean architecture and extensions on even the most difficult nails.",
+  es: "¡Hola! Soy Alena Konina, experta en técnicas modernas de uñas. Tengo 22 años y mi pasión por las uñas comenzó a los 14. Me especializo en manicura precisa sin cortes, cobertura de gel sin descascarillado y extensiones incluso en uñas difíciles.",
 };
 
 export default function HomePage({ params }: { params: { lang: Lang } }) {
@@ -99,7 +99,16 @@ export default function HomePage({ params }: { params: { lang: Lang } }) {
 
         <div className="newHeroRight">
           <div className="newHeroBigWrap">
-            <div className="newHeroBigText" aria-hidden>AK</div>
+            <div className="newHeroPhotoWrap">
+              <Image
+                src="/gallery/misc/alena.jpg"
+                alt="Alena Konina"
+                fill
+                sizes="(max-width: 860px) 100vw, 50vw"
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+                priority
+              />
+            </div>
             <p className="newHeroBio">{BIO[lang]}</p>
           </div>
           <div className="newHeroStats">

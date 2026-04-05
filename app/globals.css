@@ -981,6 +981,41 @@ a:hover{ text-decoration: none; }
   .twoCol{ grid-template-columns: 1fr 1fr; }
 }
 
+/* ---------- About page layout ---------- */
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.aboutPhoto {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,166,107,0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  max-height: 500px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 860px) {
+  .aboutLayout {
+    grid-template-columns: 340px 1fr;
+    align-items: start;
+  }
+  .aboutPhoto {
+    max-height: none;
+  }
+}
+
 /* Mobile adjustments */
 @media (max-width: 640px){
   .nav{
@@ -1392,6 +1427,17 @@ a:hover{ text-decoration: none; }
   user-select: none;
   margin-bottom: 0;
 }
+.newHeroPhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(201,166,107,0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  max-height: 420px;
+}
+
 .newHeroBio {
   font-size: 13px;
   color: rgba(240,236,228,0.5);
