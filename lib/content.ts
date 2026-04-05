@@ -1,6 +1,8 @@
 export const CONTACTS = {
   telegramUrl: "https://t.me/alenapronail",
   whatsappUrl: "https://wa.me/79035151434",
+  vkUrl: "",
+  maxUrl: "",
   instagramUrl: "https://instagram.com/alena.pro.nail",
   locationRu: "Москва, м. Улица 1905 года",
   locationEn: "Moscow, Ulitsa 1905 Goda metro",

@@ -1,23 +1,61 @@
-import Link from "next/link";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import { CONTACTS, COPY, type Lang } from "../lib/content";
+
+const MESSENGERS = [
+  { key: "whatsapp", label: "WhatsApp",  icon: "💬", getUrl: () => CONTACTS.whatsappUrl },
+  { key: "telegram", label: "Telegram",  icon: "✈️", getUrl: () => CONTACTS.telegramUrl },
+  { key: "vk",       label: "ВКонтакте", icon: "🔵", getUrl: () => CONTACTS.vkUrl },
+  { key: "max",      label: "MAX",        icon: "💙", getUrl: () => CONTACTS.maxUrl },
+];
 
 export default function CTAButtons({ lang }: { lang: Lang }) {
   const t = COPY[lang];
-  const bookingHref = `/${lang}/portfolio#booking`;
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onOutside);
+    return () => document.removeEventListener("mousedown", onOutside);
+  }, []);
 
   return (
-    <div className="ctaRow">
-      <Link className="btn btnPrimary" href={bookingHref}>
+    <div ref={ref} className="ctaDropWrap">
+      <button
+        className="btn btnPrimary ctaDropBtn"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-haspopup="listbox"
+      >
         {t.ctaBook}
-      </Link>
+        <span className={`ctaDropArrow${open ? " ctaDropArrowUp" : ""}`}>▾</span>
+      </button>
 
-      <a className="btn" href={CONTACTS.whatsappUrl} target="_blank" rel="noreferrer">
-        {t.ctaWhatsApp}
-      </a>
-
-      <a className="btn" href={CONTACTS.telegramUrl} target="_blank" rel="noreferrer">
-        {t.ctaTelegram}
-      </a>
+      {open && (
+        <div className="ctaDropList" role="listbox">
+          {MESSENGERS.map(({ key, label, icon, getUrl }) => {
+            const url = getUrl();
+            if (!url) return null;
+            return (
+              <a
+                key={key}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="ctaDropItem"
+                onClick={() => setOpen(false)}
+              >
+                <span className="ctaDropIcon">{icon}</span>
+                <span>{label}</span>
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

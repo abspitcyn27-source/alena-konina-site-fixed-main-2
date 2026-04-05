@@ -1016,6 +1016,145 @@ a:hover{ text-decoration: none; }
   }
 }
 
+/* ---------- CTA Dropdown ---------- */
+.ctaDropWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.ctaDropBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctaDropArrow {
+  font-size: 10px;
+  transition: transform 0.18s ease;
+  display: inline-block;
+}
+
+.ctaDropArrowUp {
+  transform: rotate(180deg);
+}
+
+.ctaDropList {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 40;
+  min-width: 200px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(16,16,16,0.96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  overflow: hidden;
+  animation: dropFadeIn 0.15s ease;
+}
+
+.ctaDropItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.14s ease;
+  text-decoration: none;
+}
+
+.ctaDropItem:last-child { border-bottom: none; }
+.ctaDropItem:hover { background: rgba(201,166,107,0.10); }
+
+.ctaDropIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ---------- Language Dropdown ---------- */
+.langSwitchWrap {
+  position: relative;
+}
+
+.langSwitchBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.langDropList {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  min-width: 160px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(16,16,16,0.96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  overflow: hidden;
+  animation: dropFadeIn 0.15s ease;
+}
+
+.langDropItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.14s ease;
+  text-decoration: none;
+}
+
+.langDropItem:last-child { border-bottom: none; }
+.langDropItem:hover { background: rgba(201,166,107,0.10); }
+
+/* ---------- Mobile bar dropdown ---------- */
+.mobileBarDropList {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(16,16,16,0.96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -12px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+  animation: dropFadeIn 0.15s ease;
+}
+
+.mobileBarDropItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  transition: background 0.14s ease;
+}
+
+.mobileBarDropItem:last-child { border-bottom: none; }
+.mobileBarDropItem:hover { background: rgba(201,166,107,0.10); }
+
+@keyframes dropFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Mobile adjustments */
 @media (max-width: 640px){
   .nav{
