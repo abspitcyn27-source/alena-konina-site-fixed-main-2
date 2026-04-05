@@ -13,7 +13,7 @@ export default function Page({
   params: { lang: Lang };
   searchParams?: { open?: string };
 }) {
-  const lang = (params.lang === "en" ? "en" : "ru") as "ru" | "en";
+  const lang = (params.lang === "en" ? "en" : params.lang === "es" ? "en" : "ru") as "ru" | "en";
   const initialOpenId = searchParams?.open;
 
   return (

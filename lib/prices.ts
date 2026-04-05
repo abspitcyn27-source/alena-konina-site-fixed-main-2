@@ -11,6 +11,7 @@ export type PriceItem = {
   price: string;
   description: LocalizedText;
   coverSrc: string;
+  coverVideo?: string; // optional video cover (muted autoplay loop)
   gallery?: PriceImage[];
   note?: LocalizedText;
 };
@@ -71,6 +72,7 @@ export const PRICE_ITEMS: PriceItem[] = [
       ru: "Маникюр + покрытие + сложный дизайн",
       en: "Manicure + gel polish + complex design",
     },
+    coverVideo: "/videos/manicure-hard-cover.mp4",
     price: "3700₽",
     note: {
       ru: "Если длиннее 3-ки, то +200₽ за каждую доп. длину.",

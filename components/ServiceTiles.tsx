@@ -9,11 +9,13 @@ export default function ServiceTiles({ lang }: { lang: Lang }) {
     .map((id) => PRICE_ITEMS.find((x) => x.id === id))
     .filter(Boolean) as PriceItem[];
 
+  const priceLang = lang === "es" ? "en" : lang;
+
   return (
     <div className="tileGrid">
       {items.map((item) => {
-        const title = item.title[lang];
-        const desc = item.description[lang];
+        const title = item.title[priceLang];
+        const desc = item.description[priceLang];
         return (
           <Link
             key={item.id}
@@ -22,13 +24,25 @@ export default function ServiceTiles({ lang }: { lang: Lang }) {
             aria-label={`${title} — ${item.price}`}
           >
             <div className="tileBg" aria-hidden>
-              <Image
-                src={item.coverSrc}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: "cover" }}
-              />
+              {item.coverVideo ? (
+                <video
+                  src={item.coverVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              ) : (
+                <Image
+                  src={item.coverSrc}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              )}
               <div className="tileOverlay" />
             </div>
             <div className="tileBody">
