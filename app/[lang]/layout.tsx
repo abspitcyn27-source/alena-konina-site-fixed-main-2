@@ -100,7 +100,7 @@ export default function LangLayout({
       {children}
 
       <footer className="footer" aria-label="Footer">
-        <span>© {new Date().getFullYear()} {CONTACTS.brand}</span>
+        <span>© 2024 {CONTACTS.brand}</span>
         <span>{location}</span>
       </footer>
 
