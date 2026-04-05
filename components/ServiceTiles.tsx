@@ -24,13 +24,25 @@ export default function ServiceTiles({ lang }: { lang: Lang }) {
             aria-label={`${title} — ${item.price}`}
           >
             <div className="tileBg" aria-hidden>
-              <Image
-                src={item.coverSrc}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: "cover" }}
-              />
+              {item.coverVideo ? (
+                <video
+                  src={item.coverVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              ) : (
+                <Image
+                  src={item.coverSrc}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              )}
               <div className="tileOverlay" />
             </div>
             <div className="tileBody">

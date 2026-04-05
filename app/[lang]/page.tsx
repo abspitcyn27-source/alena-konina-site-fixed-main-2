@@ -179,13 +179,25 @@ export default function HomePage({ params }: { params: { lang: Lang } }) {
 
                 {/* Обложка */}
                 <div className="newSvcCover">
-                  <Image
-                    src={item.coverSrc}
-                    alt={item.title[priceLang]}
-                    fill
-                    sizes="260px"
-                    style={{ objectFit: "cover" }}
-                  />
+                  {item.coverVideo ? (
+                    <video
+                      src={item.coverVideo}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                  ) : (
+                    <Image
+                      src={item.coverSrc}
+                      alt={item.title[priceLang]}
+                      fill
+                      sizes="260px"
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
                   <div className="newSvcCoverOverlay" />
                 </div>
 
