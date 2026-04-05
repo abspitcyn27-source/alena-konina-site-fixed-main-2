@@ -20,7 +20,7 @@ export default function AboutPage({ params }: { params: { lang: Lang } }) {
               alt="Alena Konina"
               fill
               sizes="(max-width: 860px) 100vw, 400px"
-              style={{ objectFit: "cover", objectPosition: "top center" }}
+              style={{ objectFit: "cover", objectPosition: "center center" }}
               priority
             />
           </div>

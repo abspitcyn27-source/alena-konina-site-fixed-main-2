@@ -105,7 +105,7 @@ export default function HomePage({ params }: { params: { lang: Lang } }) {
                 alt="Alena Konina"
                 fill
                 sizes="(max-width: 860px) 100vw, 50vw"
-                style={{ objectFit: "cover", objectPosition: "top center" }}
+                style={{ objectFit: "cover", objectPosition: "center center" }}
                 priority
               />
             </div>
