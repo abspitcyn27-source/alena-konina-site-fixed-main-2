@@ -60,7 +60,7 @@ export default function ServicesIndex({ params }: { params: { lang: Lang } }) {
                 ? "Если не уверены — просто напишите «хочу записаться», я помогу выбрать услугу."
                 : lang === "es"
                 ? "Si no estás segura, escribe «quiero reservar» — te ayudo a elegir."
-                : "If you're not sure, just write "I want to book" — I'll help you choose."}
+                : "If you're not sure, just write \u201cI want to book\u201d — I'll help you choose."}
             </div>
           </div>
         </div>
