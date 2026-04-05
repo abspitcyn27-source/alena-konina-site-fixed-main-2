@@ -37,6 +37,16 @@ export const COPY = {
     ctaBook: "Записаться",
     ctaTelegram: "Записаться в Telegram",
     ctaWhatsApp: "Записаться в WhatsApp",
+    masterLabel: "О мастере",
+    masterName: "Алёна Конина",
+    masterBio:
+      "Мастер маникюра и педикюра с опытом работы более 5 лет. Специализируюсь на аппаратном маникюре, наращивании и укреплении ногтей. Постоянно повышаю квалификацию, работаю только с проверенными профессиональными материалами. Принимаю в спокойной атмосфере — без очередей и спешки.",
+    masterFacts: [
+      "5+ лет опыта",
+      "Аппаратный маникюр и педикюр",
+      "Наращивание и укрепление",
+      "Только профессиональные материалы",
+    ],
     whyTitle: "Почему выбирают меня",
     whyItems: [
       "Опыт работы с разными типами ногтей",
@@ -70,6 +80,16 @@ export const COPY = {
     ctaBook: "Book now",
     ctaTelegram: "Book via Telegram",
     ctaWhatsApp: "Book via WhatsApp",
+    masterLabel: "About",
+    masterName: "Alena Konina",
+    masterBio:
+      "Nail master with 5+ years of experience. Specializing in hardware manicure, nail extensions and strengthening. I work exclusively with professional-grade materials in a calm, private setting — no rush, no crowds.",
+    masterFacts: [
+      "5+ years of experience",
+      "Hardware manicure & pedicure",
+      "Extensions & strengthening",
+      "Professional materials only",
+    ],
     whyTitle: "Why clients choose me",
     whyItems: [
       "Experience with different nail types",
